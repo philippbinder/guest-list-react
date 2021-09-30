@@ -17,44 +17,40 @@ https://github.com/upleveled/express-guest-list-api-memory-data-store
 import { css } from '@emotion/react';
 import PropTypes from 'prop-types'; // is a default import
 import { useState } from 'react'; // is a named import
-import FullName, { Def } from './inputProps';
+import FullName from './inputProps';
 import { Abc } from './inputProps.js'; // 2 types of imports - default and named - {} for named ones and imports without {} for default imports
 import { headerStyle } from './styles.js';
 
-function GuestList() {
-  const [first, setFirst] = useState();
+// function GuestList() {
+//   const [first, setFirst] = useState();
 
-  async function fetchGuestList() {
-    const baseUrl = 'http://localhost:5000';
-    const response = await fetch(`${baseUrl}/`);
-    const allGuests = await response.json();
-    console.log(allGuests);
+//   async function fetchGuestList() {
+//     const baseUrl = 'http://localhost:5000';
+//     const response = await fetch(`${baseUrl}/`);
+//     const allGuests = await response.json();
+//     console.log(allGuests);
 
-    fetchGuestList(); // Maybe outside of it's function?
+//     fetchGuestList(); // Maybe outside of it's function?
 
-    async function addGuest() {
-      const response = await fetch(`${baseUrl}/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ firstName: 'Karl', lastName: 'Horky' }),
-      });
-      const createdGuest = await response.json();
-    }
-  }
-  fetchGuestList();
-}
+//     async function addGuest() {
+//       const response = await fetch(`${baseUrl}/`, {7
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ firstName: 'Karl', lastName: 'Horky' }),
+//       });
+//       const createdGuest = await response.json();
+//     }
+//   }
+//   fetchGuestList();
+// }
 
 export default function inputPart() {
   return (
     <div>
       <header css={headerStyle}>
         <h1>Guest List. It adds guests... To a list!</h1>
-        {/* <input /> */}
-        {/* <input /> */}
-        <Abc> Test </Abc>
-        <Def> </Def>
         <FullName />
       </header>
     </div>
